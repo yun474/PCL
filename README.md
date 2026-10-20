@@ -1,3 +1,17 @@
+## ⚠️ 这是 PCL 下载修复版
+
+本仓库 fork 自 [Meloong-Git/PCL](https://github.com/Meloong-Git/PCL)，恢复了官方 2.99.0.0 中移除的 MC 下载与整合包安装功能，需要与官方版配合使用。
+
+- **无法使用正版微软账号登录**，请使用官方版登录和启动游戏
+- 无法通过 CurseForge 接口搜索资源，也无法安装需要在线解析 Mod 的 CurseForge 格式整合包
+- 下载地址、使用方法与完整说明见 [发行版页面](https://github.com/yun474/PCL/releases)
+
+本分支与龙腾猫跃及 PCL 官方无关，请勿向官方反馈本版本的问题。
+
+---
+
+> 以下为上游原 README
+
 # Plain Craft Launcher
 
 [![Stars](https://img.shields.io/github/stars/Meloong-Git/PCL?style=flat&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0iTTggLjI1YS43NS43NSAwIDAgMSAuNjczLjQxOGwxLjg4MiAzLjgxNSA0LjIxLjYxMmEuNzUuNzUgMCAwIDEgLjQxNiAxLjI3OWwtMy4wNDYgMi45Ny43MTkgNC4xOTJhLjc1MS43NTEgMCAwIDEtMS4wODguNzkxTDggMTIuMzQ3bC0zLjc2NiAxLjk4YS43NS43NSAwIDAgMS0xLjA4OC0uNzlsLjcyLTQuMTk0TC44MTggNi4zNzRhLjc1Ljc1IDAgMCAxIC40MTYtMS4yOGw0LjIxLS42MTFMNy4zMjcuNjY4QS43NS43NSAwIDAgMSA4IC4yNVoiIGZpbGw9IiNlYWM1NGYiLz48L3N2Zz4=&logoSize=auto&label=Stars&labelColor=444444&color=eac54f)](https://github.com/Meloong-Git/PCL/)
