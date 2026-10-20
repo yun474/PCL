@@ -20,7 +20,7 @@ Public Module ModBase
     Public Const BuildTypeDisplay As String = "开发版"
     Public Const BuildType As BuildTypes = BuildTypes.Debug
 #ElseIf RELEASE Then
-    Public Const BuildTypeDisplay As String = "正式版"
+    Public Const BuildTypeDisplay As String = "下载修复版"
     Public Const BuildType As BuildTypes = BuildTypes.Release
 #Else
     Public Const BuildTypeDisplay As String = "快照版"

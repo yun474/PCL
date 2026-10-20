@@ -146,7 +146,7 @@ RetryCacheCheck:
     End Sub
     ''' <summary>
     ''' 要求程序以单例运行。
-    ''' 如果已在运行，则将其窗口拖出来并播放提示音，然后结束当前进程。
+    ''' 如果已在运行，则将其窗口拖出来并弹窗提示，然后结束当前进程。
     ''' </summary>
     Private Shared Sub WaitingMutex(e As StartupEventArgs)
         If BuildType = BuildTypes.Debug Then Return
@@ -167,8 +167,11 @@ RetryCacheCheck:
             Dim WindowHwnd As IntPtr = FindWindow(Nothing, "Plain Craft Launcher　")
             If WindowHwnd = IntPtr.Zero Then WindowHwnd = FindWindow(Nothing, "Plain Craft Launcher 2　")
             If WindowHwnd <> IntPtr.Zero Then ShowWindowToTop(WindowHwnd)
-            '播放提示音并退出
-            Beep()
+            '提示用户先关闭已有实例，然后退出
+            '官方版与下载修复版共用同一个单例锁，同时运行会争抢 PCL 文件夹下的配置与日志文件
+            MsgBox("检测到 PCL 正在运行。" & vbCrLf & vbCrLf &
+                   "为避免两边同时修改配置文件，请先关闭正在运行的 PCL，再打开下载修复版。",
+                   MsgBoxStyle.Exclamation Or MsgBoxStyle.SystemModal Or MsgBoxStyle.MsgBoxSetForeground, "PCL 下载修复版")
             Environment.[Exit](ProcessReturnValues.Cancel)
         Catch ex As Exception
             Logger.Warn(ex, "单例检查失败")
