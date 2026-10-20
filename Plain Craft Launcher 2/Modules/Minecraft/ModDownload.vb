@@ -1177,11 +1177,7 @@ Public Module ModDownload
                                  Optional Content As String = Nothing, Optional ContentType As String = Nothing) As JToken
         Dim Urls As New List(Of (Url As String, Timeout As Integer))
         Dim McimUrl As String = DlSourceModGet(Url)
-        If McimUrl <> Url AndAlso String.IsNullOrEmpty(CurseForgeAPIKey) AndAlso Url.Contains("api.curseforge.com") Then
-            '未配置 CurseForge API Key 时官方源必定拒绝请求，直接使用 MCIM 镜像源
-            Urls.Add((McimUrl, 10))
-            Urls.Add((McimUrl, 30))
-        ElseIf McimUrl <> Url Then
+        If McimUrl <> Url Then
             Select Case Settings.Get(Of Integer)("ToolDownloadMod")
                 Case 0
                     Urls.Add((McimUrl, 10))
